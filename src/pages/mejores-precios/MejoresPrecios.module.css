@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 30px;
+  font-size: var(--header-size-1);
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 780px) {
+  .header {
+    font-size: var(--header-size-2);
+  }
+}

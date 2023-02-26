@@ -1,0 +1,75 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  height: 260px;
+  margin: 9px;
+  border-radius: 5px 5px 0 0;
+}
+
+.img {
+  border-radius: 5px 5px 0 0;
+  max-height: 60%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.productName {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.productDescription {
+  font-size: 0.7rem;
+  margin-left: 3px;
+}
+
+.productPrice {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.buyLogo {
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  filter: invert(100%);
+  background-color: #f09647;
+}
+
+.favLogo {
+  width: 25px;
+  padding: 10px 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.isNew {
+  position: absolute;
+  top: 53%;
+  margin-left: 3px;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--main-yellow);
+}
+
+@media (max-width: 780px) {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 230px;
+    margin: 3px;
+  }
+
+  .isNew {
+    top: 48%;
+  }
+}

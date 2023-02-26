@@ -1,0 +1,22 @@
+.hamBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.div {
+  width: 20px;
+  height: 3px;
+  margin: 2px 0;
+  background-color: black;
+  border-radius: 3px;
+}
+
+@media (max-width: 780px) {
+  .hamBtn {
+    display: flex;
+  }
+}

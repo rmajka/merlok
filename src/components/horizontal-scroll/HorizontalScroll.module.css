@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 420px;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  margin-bottom: 30px;
+}
+
+.flexContainer > img {
+  max-width: 240px;
+  height: 340px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.arrowBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.leftArrowImg {
+  width: 40px;
+  filter: invert(60%);
+}
+
+.rightArrowImg {
+  width: 40px;
+  filter: invert(60%);
+  transform: rotate(180deg);
+}
+
+.leftArrowImg:hover {
+  filter: invert(0%);
+}
+
+.rightArrowImg:hover {
+  filter: invert(0%);
+}
+
+.flexContainer::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+.flexContainer::-webkit-scrollbar-track {
+  background: #ffffff; /* color of the tracking area */
+}
+
+.flexContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(174, 174, 177); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 6px solid #ffffff; /* creates padding around scroll thumb */
+}
+
+@media (max-width: 780px) {
+  .container {
+    height: 300px;
+  }
+
+  .flexContainer > img {
+    max-width: 160px;
+    height: 230px;
+  }
+
+  .leftArrowImg {
+    width: 20px;
+  }
+
+  .rightArrowImg {
+    width: 20px;
+  }
+}
