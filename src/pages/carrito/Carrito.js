@@ -9,6 +9,40 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
     document.title = "Merlok - Carrito";
   }, []);
 
+  //custom styles for select element
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      background: "#fff",
+      borderColor: "#9e9e9e",
+      minHeight: "30px",
+      height: "30px",
+      width: "100px",
+      fontSize: "0.8rem",
+      boxShadow: state.isFocused ? null : null,
+    }),
+
+    container: (provided) => ({
+      ...provided,
+      display: "flex",
+    }),
+
+    valueContainer: (provided) => ({
+      ...provided,
+      margin: "0px",
+    }),
+
+    input: (provided) => ({
+      ...provided,
+      margin: "-10px",
+    }),
+
+    indicatorsContainer: (provided) => ({
+      ...provided,
+      height: "30px",
+    }),
+  };
+
   //options for select
   const options = [
     { value: 1, label: 1 },
@@ -60,7 +94,7 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
             Eliminar producto
           </p>
           <Select
-            className={styles.select}
+            styles={customStyles}
             options={options}
             onChange={handleSelect.bind(item)}
           />

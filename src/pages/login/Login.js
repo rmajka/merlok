@@ -15,6 +15,7 @@ export default function Registrate() {
     <section className={styles.container}>
       <main className={open ? styles.open : styles.close}>
         <div className={styles.fromContainer}>
+          <h1>hola</h1>
           <Link to="/" onClick={() => setOpen(false)}>
             Volver
           </Link>

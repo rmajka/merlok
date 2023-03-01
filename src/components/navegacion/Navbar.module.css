@@ -24,9 +24,6 @@
 
 .linksContainer a:hover {
   text-decoration: underline;
-  margin-right: 25px;
-  color: var(--main-black);
-  font-weight: 700;
 }
 
 .logo {
@@ -52,11 +49,11 @@
   padding: 8px;
   text-decoration: none;
   color: black;
+  border-radius: 50px;
 }
 
 .usuarioBtn:hover {
   background-color: var(--light-grey);
-  border-radius: 50px;
 }
 
 .usuarioBtnSpan {
@@ -68,17 +65,6 @@
 
 .imgLogo {
   width: 20px;
-}
-
-.carritoLink {
-  position: relative;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  padding: 8px;
-  border-radius: 50%;
 }
 
 .contador {
@@ -98,13 +84,19 @@
   padding: 3px;
 }
 
-.carritoLink:hover {
+.carritoLink {
+  position: relative;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-  background-color: var(--light-grey);
   padding: 8px;
+  border-radius: 50%;
+}
+
+.carritoLink:hover {
+  background-color: var(--light-grey);
 }
 
 .favLink {
@@ -117,12 +109,7 @@
 }
 
 .favLink:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
   background-color: var(--light-grey);
-  padding: 8px;
 }
 
 .hr {
