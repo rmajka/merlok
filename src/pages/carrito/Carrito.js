@@ -46,7 +46,7 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
           <span>{item.productName}</span>
           <p>{item.description}</p>
           <span>
-            {(item.price * item.bagCuantity).toFixed(2)}{" "}
+            {(item.price * item.bagCuantity).toFixed(2)}&nbsp;€
             {` - Uds: ${item.bagCuantity}`}{" "}
           </span>
           <p
@@ -70,9 +70,7 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
       <h1 className={styles.header}>Tu carrito de compra</h1>
       {carrito.length === 0 && <p>Carrito de compra está vacío</p>}
       <div className={styles.productsContainer}>{showCarrito}</div>
-      <section>
-        <Checkout carrito={carrito} />
-      </section>
+      {carrito.length !== 0 && <Checkout carrito={carrito} />}
     </section>
   );
 }

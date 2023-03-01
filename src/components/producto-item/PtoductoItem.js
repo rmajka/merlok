@@ -34,7 +34,6 @@ export default function PtoductoItem({
     if (carrito.length === 0) {
       producto.bagCuantity = 1;
       setCarrito([producto]);
-      console.log("frist in carrito");
       return;
     }
     //update item in carrito
@@ -43,7 +42,6 @@ export default function PtoductoItem({
       const index = carrito.indexOf(producto);
       updatedItems[index].bagCuantity++;
       setCarrito(updatedItems);
-      console.log("in carrito, updating");
       return;
     }
     //add new item to carrito
@@ -51,7 +49,6 @@ export default function PtoductoItem({
       const newItem = producto;
       newItem.bagCuantity = 1;
       setCarrito([...carrito, newItem]);
-      console.log("new in carrito");
       return;
     }
   }
