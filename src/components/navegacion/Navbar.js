@@ -34,12 +34,12 @@ export default function Navbar({ productos, carrito }) {
         <Link to="/novedades">Novedades</Link>
       </ul>
       <div className={styles.btnsContainer}>
-        <button className={styles.usuarioBtn}>
+        <Link to="/login" className={styles.usuarioBtn}>
           <img src={userLogo} className={styles.imgLogo} alt="usuario" />
           <span className={styles.usuarioBtnSpan}>
             Inicia sesión o regístrate
           </span>
-        </button>
+        </Link>
         <Link to="/favoritos" className={styles.favLink}>
           <img
             src={

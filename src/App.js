@@ -11,6 +11,7 @@ import Productos from "./pages/productos/Productos";
 import Novedades from "./pages/novedades/Novedades";
 import MejoresPrecios from "./pages/mejores-precios/MejoresPrecios";
 import Favoritos from "./pages/favoritos/Favoritos";
+import Login from "./pages/login/Login";
 import Presentacion from "./components/presentacion/Presentacion";
 import Carrito from "./pages/carrito/Carrito";
 import ScrollArribaBtn from "./components/scroll-arriba-btn/ScrollArribaBtn";
@@ -33,7 +34,7 @@ function App() {
       setProductos(data);
     }
   }, [productosData]);
-  //============================== working on it=================
+  //============== working on it ===============================
   //add to sesion storage
   useEffect(() => {
     let sesionCarrito = JSON.stringify(carrito);
@@ -126,6 +127,7 @@ function App() {
               />
             }
           />
+          <Route path="/login" element={<Login />} />
         </Routes>
         {abrirPresentacion.abrir && (
           <Presentacion

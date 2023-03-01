@@ -21,6 +21,7 @@ export default function Checkout({ carrito }) {
       </h5>
       <h5>IVA 21%: {(totalPrice * 0.21).toFixed(2)}&nbsp;€</h5>
       <h4>Precio total: {totalPrice.toFixed(2)}&nbsp;€ </h4>
+      <button>Hacer pedido</button>
     </section>
   );
 }

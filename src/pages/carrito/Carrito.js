@@ -59,7 +59,11 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
           >
             Eliminar producto
           </p>
-          <Select options={options} onChange={handleSelect.bind(item)} />
+          <Select
+            className={styles.select}
+            options={options}
+            onChange={handleSelect.bind(item)}
+          />
         </div>
       </div>
     );
