@@ -106,7 +106,9 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
   return (
     <section className={styles.container}>
       <h1 className={styles.header}>Tu carrito de compra</h1>
-      {carrito.length === 0 && <p>Carrito de compra está vacío</p>}
+      {carrito.length === 0 && (
+        <p className={styles.carritoVacio}>Carrito de compra está vacío</p>
+      )}
       <div className={styles.productsContainer}>{showCarrito}</div>
       {carrito.length !== 0 && <Checkout carrito={carrito} />}
     </section>

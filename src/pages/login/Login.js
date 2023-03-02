@@ -30,8 +30,9 @@ export default function Registrate() {
               {loginMode ? "Login" : "Regístrate"}
             </button>
           </form>
-          <span>
-            {loginMode ? "¿No estás registrado?" : "¿Estás registrado?"}{" "}
+          <span className={styles.changeModeContainer}>
+            {loginMode ? "¿No estás registrado?" : "¿Estás registrado?"}
+            &nbsp;&nbsp;&nbsp;
             <button
               className={styles.loginModeBtn}
               onClick={() => setLoginMode((curr) => !curr)}

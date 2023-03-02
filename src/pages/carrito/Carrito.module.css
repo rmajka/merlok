@@ -29,6 +29,10 @@
   z-index: var(--z-index-page);
 }
 
+.carritoVacio {
+  margin-top: 100px;
+}
+
 .itemContainer {
   display: flex;
   width: 390px;
