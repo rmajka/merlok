@@ -1,8 +1,13 @@
 import styles from "./Buscador.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Buscador({ setElementoBuscado }) {
-  function handleChange(event) {
-    setElementoBuscado(event.target.value);
+  const navegate = useNavigate();
+  function handleKeyDown(event) {
+    if (event.key == "Enter") {
+      setElementoBuscado(event.target.value);
+      navegate("/buscadorPresentacion");
+    }
   }
 
   return (
@@ -10,7 +15,7 @@ export default function Buscador({ setElementoBuscado }) {
       className={styles.input}
       type="text"
       placeholder="¿Qué estás buscando?"
-      onChange={handleChange}
+      onKeyDown={handleKeyDown}
     />
   );
 }

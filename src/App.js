@@ -137,7 +137,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route
             path="/buscadorPresentacion"
-            element={<BuscadorPresentacion />}
+            element={
+              <BuscadorPresentacion
+                elementoBuscado={elementoBuscado}
+                productos={productos}
+                setProductos={setProductos}
+                carrito={carrito}
+                setCarrito={setCarrito}
+                setAbrirPresentacion={setAbrirPresentacion}
+              />
+            }
           />
         </Routes>
         {abrirPresentacion.abrir && (
