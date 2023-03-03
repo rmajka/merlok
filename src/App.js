@@ -14,6 +14,7 @@ import Favoritos from "./pages/favoritos/Favoritos";
 import Login from "./pages/login/Login";
 import Presentacion from "./components/presentacion/Presentacion";
 import Carrito from "./pages/carrito/Carrito";
+import BuscadorPresentacion from "./pages/buscadorPresentacion/BuscadorPresentacion";
 import ScrollArribaBtn from "./components/scroll-arriba-btn/ScrollArribaBtn";
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
   const [productos, setProductos] = useState([]);
   //add to carrito
   const [carrito, setCarrito] = useState([]);
-
+  //item for search
+  const [elementoBuscado, setElementoBuscado] = useState(null);
+  console.log(elementoBuscado);
   //set and show products
   useEffect(() => {
     if (!loadingProductosData) {
@@ -50,7 +53,11 @@ function App() {
   return (
     <div className="App">
       <div className="main-content">
-        <Navbar productos={productos} carrito={carrito} />
+        <Navbar
+          productos={productos}
+          carrito={carrito}
+          setElementoBuscado={setElementoBuscado}
+        />
         <Routes>
           <Route
             path="/"
@@ -128,6 +135,10 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/buscadorPresentacion"
+            element={<BuscadorPresentacion />}
+          />
         </Routes>
         {abrirPresentacion.abrir && (
           <Presentacion

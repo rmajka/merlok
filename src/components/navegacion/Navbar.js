@@ -9,7 +9,7 @@ import fillHeartLogo from "../../assets/heart-fill-logo.svg";
 import Buscador from "../buscador/Buscador";
 import Hamburger from "../hamburger/Hamburger";
 
-export default function Navbar({ productos, carrito }) {
+export default function Navbar({ productos, carrito, setElementoBuscado }) {
   //sum elements in carrito
   const sumCarrito = carrito
     .map((item) => item.bagCuantity)
@@ -25,7 +25,7 @@ export default function Navbar({ productos, carrito }) {
         onClick={() => navigate("/")}
         alt="merlok"
       />
-      <Buscador />
+      <Buscador setElementoBuscado={setElementoBuscado} />
       <ul className={styles.linksContainer}>
         <Link to="/">Home</Link>
         <Link to="/productos">Productos</Link>

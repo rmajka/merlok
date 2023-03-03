@@ -21,11 +21,13 @@ export default function Registrate() {
           </Link>
           <form action="submit" className={styles.from}>
             {!loginMode && <label htmlFor="name">Tu nombre</label>}
-            {!loginMode && <input type="text" required />}
+            {!loginMode && (
+              <input className={styles.input} type="text" required />
+            )}
             <label htmlFor="emial">Tu email</label>
-            <input type="email" required />
+            <input className={styles.input} type="email" required />
             <label htmlFor="password">Tu contraseña</label>
-            <input type="password" required />
+            <input className={styles.input} type="password" required />
             <button className={styles.fromBtn} type="submit">
               {loginMode ? "Login" : "Regístrate"}
             </button>

@@ -49,7 +49,7 @@ main.open {
   width: 100%;
 }
 
-input {
+.input {
   border: none;
   border-bottom: 2px solid var(--main-dark-grey);
   font-size: var(--font-size-1);
@@ -59,7 +59,7 @@ input {
   color: var(--main-dark-grey);
 }
 
-input:focus {
+.input:focus {
   outline: none;
   border-bottom: 3px solid var(--main-blue);
 }
