@@ -1,5 +1,9 @@
+.form {
+  width: 100%;
+}
+
 .input {
-  width: 70%;
+  width: 90%;
   height: 50px;
   border-radius: 40px;
   border: none;
@@ -17,6 +21,8 @@
 
 .input::placeholder {
   font-size: 1.1rem;
+  color: var(--main-dark-grey);
+  opacity: 1;
 }
 
 .input:focus {

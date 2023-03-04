@@ -26,7 +26,7 @@ function App() {
   //add to carrito
   const [carrito, setCarrito] = useState([]);
   //item for search
-  const [elementoBuscado, setElementoBuscado] = useState(null);
+  const [elementoBuscado, setElementoBuscado] = useState("");
   console.log(elementoBuscado);
   //set and show products
   useEffect(() => {

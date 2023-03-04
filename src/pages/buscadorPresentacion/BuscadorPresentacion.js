@@ -11,9 +11,9 @@ export default function BuscadorPresentacion({
   setProductos,
 }) {
   let elementosEncontrados = [];
-  if (elementoBuscado != null) {
+  if (elementoBuscado.toLowerCase() != "") {
     const buscador = productos.filter((item) =>
-      item.searchKey.toLowerCase().includes(elementoBuscado)
+      item.searchKey.toLowerCase().includes(elementoBuscado.toLowerCase())
     );
 
     elementosEncontrados = buscador.map((item, index) => {
