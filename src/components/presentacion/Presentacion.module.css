@@ -18,6 +18,8 @@
   position: relative;
   width: 80%;
   max-width: 900px;
+  max-height: 500px;
+  overflow-y: auto;
   height: fit-content;
   background-color: var(--main-white);
   border-radius: 10px;
