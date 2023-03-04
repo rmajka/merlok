@@ -1,8 +1,10 @@
 import styles from "./Buscador.module.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Buscador({ setElementoBuscado }) {
+  //remove keyboard afer submit
+  const inputRef = useRef(null);
   //local search term
   const [searchTerm, setSearchTerm] = useState("");
   //navegate to search result component
@@ -11,6 +13,7 @@ export default function Buscador({ setElementoBuscado }) {
   function handleSearch(event) {
     event.preventDefault();
     setElementoBuscado(searchTerm);
+    inputRef.current.blur(); // hide the keyboard
     navegate("/buscadorPresentacion");
   }
 
@@ -21,6 +24,7 @@ export default function Buscador({ setElementoBuscado }) {
         type="text"
         placeholder="¿Qué estás buscando?"
         onChange={(event) => setSearchTerm(event.target.value)}
+        ref={inputRef}
       />
     </form>
   );
