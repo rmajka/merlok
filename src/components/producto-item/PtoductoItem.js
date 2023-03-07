@@ -37,13 +37,14 @@ export default function PtoductoItem({
       return;
     }
     //update item in carrito
-    if (carrito.some((obj) => obj.id === producto.id)) {
-      const updatedItems = [...carrito];
-      const index = carrito.indexOf(producto);
-      updatedItems[index].bagCuantity++;
-      setCarrito(updatedItems);
-      return;
+    for (let i = 0; i < carrito.length; i++) {
+      if (carrito[i].id === producto.id) {
+        carrito[i].bagCuantity = carrito[i].bagCuantity + 1;
+        setCarrito([...carrito]);
+        return;
+      }
     }
+
     //add new item to carrito
     if (carrito.some((obj) => obj.id !== producto.id)) {
       const newItem = producto;

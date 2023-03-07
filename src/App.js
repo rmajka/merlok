@@ -63,7 +63,7 @@ function App() {
   }, [carrito]);
 
   //=============================================================
-  console.log(user);
+
   //set and show products
   useEffect(() => {
     if (!loadingProductosData) {

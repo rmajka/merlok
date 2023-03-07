@@ -26,8 +26,9 @@
 }
 
 .input:focus {
-  outline: 1px solid var(--main-dark-grey);
+  outline: none;
   border-radius: 40px;
+  background-color: #d0d1d2;
 }
 
 @media (max-width: 780px) {
