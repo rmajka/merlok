@@ -23,13 +23,32 @@ function App() {
   const [productosData, loadingProductosData, errorProductosData] =
     useCollectionData(productosRef);
   const [productos, setProductos] = useState([]);
-  //add to carrito
-  const [carrito, setCarrito] = useState([]);
   //item for search
   const [elementoBuscado, setElementoBuscado] = useState("");
-
-  //============== working on it ===============================
-  //add to sesion storage
+  //add to carrito
+  const [carrito, setCarrito] = useState([]);
+  //current user
+  const [user, setUser] = useState({
+    userName: "",
+    userEmail: "",
+    userPass: "",
+    logIn: false,
+  });
+  //save user to sestion storage
+  //get from session storage
+  useEffect(() => {
+    const data = window.sessionStorage.getItem("user");
+    if (data !== null) {
+      const d = JSON.parse(data);
+      if (d.logIn) setUser(d);
+    }
+  }, []);
+  //add to session srorage
+  useEffect(() => {
+    window.sessionStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
+  //==================it seems to be workinkg correctly ==========
+  //get from session storage
   useEffect(() => {
     const data = window.sessionStorage.getItem("sesionCarrito");
     if (data !== null) {
@@ -37,14 +56,14 @@ function App() {
       if (d.length !== 0) setCarrito(d);
     }
   }, []);
-
+  //add to sesion storage
   useEffect(() => {
     const sesionCarrito = JSON.stringify(carrito);
     window.sessionStorage.setItem("sesionCarrito", sesionCarrito);
   }, [carrito]);
 
   //=============================================================
-
+  console.log(user);
   //set and show products
   useEffect(() => {
     if (!loadingProductosData) {
@@ -145,7 +164,10 @@ function App() {
               />
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={<Login user={user} setUser={setUser} />}
+          />
           <Route
             path="/buscadorPresentacion"
             element={
