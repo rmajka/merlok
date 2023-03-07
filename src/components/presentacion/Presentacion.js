@@ -26,8 +26,7 @@ export default function Presentacion({
           className={styles.imgPresentacion}
           alt="producto merlok"
         />
-        <div>
-          {" "}
+        <div className={styles.presentationContainer}>
           <h1 className={styles.title}>{abrirPresentacion.elemento.title}</h1>
           <p className={styles.descripcion}>
             {abrirPresentacion.elemento.presentation}

@@ -27,7 +27,24 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   //item for search
   const [elementoBuscado, setElementoBuscado] = useState("");
-  console.log(elementoBuscado);
+
+  //============== working on it ===============================
+  //add to sesion storage
+  useEffect(() => {
+    const data = window.sessionStorage.getItem("sesionCarrito");
+    if (data !== null) {
+      const d = JSON.parse(data);
+      if (d.length !== 0) setCarrito(d);
+    }
+  }, []);
+
+  useEffect(() => {
+    const sesionCarrito = JSON.stringify(carrito);
+    window.sessionStorage.setItem("sesionCarrito", sesionCarrito);
+  }, [carrito]);
+
+  //=============================================================
+
   //set and show products
   useEffect(() => {
     if (!loadingProductosData) {
@@ -37,13 +54,7 @@ function App() {
       setProductos(data);
     }
   }, [productosData]);
-  //============== working on it ===============================
-  //add to sesion storage
-  useEffect(() => {
-    let sesionCarrito = JSON.stringify(carrito);
-    sessionStorage.setItem("sesionCarrito", sesionCarrito);
-  }, [carrito]);
-  //=============================================================
+
   //open presentation window
   const [abrirPresentacion, setAbrirPresentacion] = useState({
     abrir: false,

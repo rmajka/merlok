@@ -1,9 +1,8 @@
 import styles from "./Login.module.css";
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Registrate() {
+export default function Login({ location }) {
   const [open, setOpen] = useState(false);
   const [loginMode, setLoginMode] = useState(true);
 
@@ -20,14 +19,28 @@ export default function Registrate() {
             Volver
           </Link>
           <form action="submit" className={styles.from}>
-            {!loginMode && <label htmlFor="name">Tu nombre</label>}
             {!loginMode && (
-              <input className={styles.input} type="text" required />
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Tu nombre"
+                required
+              />
             )}
-            <label htmlFor="emial">Tu email</label>
-            <input className={styles.input} type="email" required />
-            <label htmlFor="password">Tu contraseña</label>
-            <input className={styles.input} type="password" required />
+
+            <input
+              className={styles.input}
+              type="email"
+              placeholder="Tu email"
+              required
+            />
+
+            <input
+              className={styles.input}
+              type="password"
+              placeholder="Contraseña"
+              required
+            />
             <button className={styles.fromBtn} type="submit">
               {loginMode ? "Login" : "Regístrate"}
             </button>
