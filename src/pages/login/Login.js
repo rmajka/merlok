@@ -6,7 +6,7 @@ import eyeClosed from "../../assets/eye-close.svg";
 
 export default function Login({ user, setUser }) {
   const [open, setOpen] = useState(false);
-  const [loginMode, setLoginMode] = useState(true);
+  const [loginMode, setLoginMode] = useState(false);
   const [tempUser, setTempUser] = useState({
     userName: "",
     userEmail: "",
@@ -34,6 +34,7 @@ export default function Login({ user, setUser }) {
           userPass: "",
           logIn: false,
         });
+        setMsg("");
       } else setMsg("Email / contraseña incorrectos");
     } else {
       setUser(tempUser);
@@ -43,7 +44,14 @@ export default function Login({ user, setUser }) {
         userPass: "",
         logIn: false,
       });
+      setMsg("Te has registrado correctamente");
     }
+  }
+
+  //switch login / signup mode
+  function switchLoginMode() {
+    setLoginMode((curr) => !curr);
+    setMsg("");
   }
 
   return (
@@ -51,8 +59,12 @@ export default function Login({ user, setUser }) {
       <main className={open ? styles.open : styles.close}>
         <div className={styles.fromContainer}>
           <h1>Hola {user.logIn && user.userName}</h1>
-          <Link to="/" onClick={() => setOpen(false)}>
-            Volver
+          <Link
+            className={styles.volverBtn}
+            to="/"
+            onClick={() => setOpen(false)}
+          >
+            Volver a la página principal
           </Link>
           {!user.logIn && (
             <form
@@ -109,12 +121,16 @@ export default function Login({ user, setUser }) {
           <span>{msg}</span>
           {!user.logIn && (
             <span className={styles.changeModeContainer}>
-              {loginMode ? "¿No estás registrado?" : "¿Estás registrado?"}
+              {loginMode ? (
+                <span>¿No estás registrado?</span>
+              ) : (
+                <span>¿Estás registrado?</span>
+              )}
               &nbsp;&nbsp;&nbsp;
               <button
                 type="submit"
                 className={styles.loginModeBtn}
-                onClick={() => setLoginMode((curr) => !curr)}
+                onClick={switchLoginMode}
               >
                 {loginMode ? "Regístrate" : "Identifícate"}
               </button>
@@ -122,6 +138,7 @@ export default function Login({ user, setUser }) {
           )}
           {user.logIn && (
             <button
+              className={styles.cerrarSesionBtn}
               onClick={() =>
                 setUser({
                   userName: "",
@@ -131,7 +148,7 @@ export default function Login({ user, setUser }) {
                 })
               }
             >
-              logout
+              Cerrar sesión
             </button>
           )}
         </div>
