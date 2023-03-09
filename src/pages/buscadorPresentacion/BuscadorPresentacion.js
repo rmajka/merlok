@@ -33,7 +33,7 @@ export default function BuscadorPresentacion({
 
   return (
     <section className={styles.container}>
-      <p>Tu busqueda: {elementoBuscado}</p>
+      <p>Resultados de tu busqueda: {elementoBuscado}</p>
       <div className={styles.itemsContainer}> {elementosEncontrados}</div>
     </section>
   );

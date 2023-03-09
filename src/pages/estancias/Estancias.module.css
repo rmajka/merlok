@@ -9,7 +9,7 @@
 }
 
 .header {
-  margin-bottom: 30px;
+  margin: 20px;
   font-size: var(--header-size-1);
 }
 
@@ -53,6 +53,7 @@
   .header {
     padding: 0 10px;
     font-size: var(--header-size-2);
+    text-align: center;
   }
 
   .mainPhoto {

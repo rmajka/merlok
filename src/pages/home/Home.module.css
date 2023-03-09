@@ -10,6 +10,7 @@
 
 .header {
   font-size: var(--header-size-1);
+  margin: 20px 0;
 }
 
 .homeGridContainer {

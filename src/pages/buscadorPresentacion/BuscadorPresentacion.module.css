@@ -6,8 +6,12 @@
   width: 90%;
 }
 
+.container > p {
+  margin-bottom: 20px;
+}
+
 .itemsContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }

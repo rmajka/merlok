@@ -24,6 +24,11 @@ main.open {
 .volverBtn {
   color: var(--main-white);
   font-weight: bold;
+  cursor: pointer;
+}
+
+.volverBtn:hover {
+  color: #d3e5fc;
 }
 
 .fromContainer {

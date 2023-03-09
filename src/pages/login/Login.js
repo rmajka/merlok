@@ -1,5 +1,6 @@
 import styles from "./Login.module.css";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import eyeOpen from "../../assets/eye-open.svg";
 import eyeClosed from "../../assets/eye-close.svg";
 
@@ -13,7 +14,14 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
   });
   const [msg, setMsg] = useState("");
   const [showPas, setShowPass] = useState(false);
-
+  //show current pathname
+  const location = useLocation();
+  let path = location.pathname.substring(1);
+  if (path === "") {
+    path = "home";
+  } else if (path === "buscadorPresentacion") {
+    path = "buscador";
+  }
   //manage sign up
   function handleSubmitFrom(e) {
     e.preventDefault();
@@ -48,7 +56,7 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
     setLoginMode((curr) => !curr);
     setMsg("");
   }
-
+  console.log("path: ", path);
   return (
     <section className={styles.container}>
       <main className={openLogin ? styles.open : styles.close}>
@@ -58,7 +66,7 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
             className={styles.volverBtn}
             onClick={() => setOpenLogin(false)}
           >
-            Volver
+            Volver a {path}
           </span>
           {!user.logIn && (
             <form
