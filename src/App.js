@@ -87,6 +87,7 @@ function App() {
           productos={productos}
           carrito={carrito}
           setElementoBuscado={setElementoBuscado}
+          user={user}
         />
         <Routes>
           <Route
@@ -161,6 +162,7 @@ function App() {
                 carrito={carrito}
                 setCarrito={setCarrito}
                 setAbrirPresentacion={setAbrirPresentacion}
+                user={user}
               />
             }
           />

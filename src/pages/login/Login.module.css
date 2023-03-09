@@ -28,7 +28,7 @@ main.open {
 }
 
 .volverBtn {
-  color: var(--main-black);
+  color: var(--main-white);
   font-weight: bold;
 }
 
@@ -41,10 +41,14 @@ main.open {
   padding: 3%;
   border-radius: 5px;
   font-size: var(--font-size-1);
-  background-color: #ffffff8f;
+  background-color: #0000008f;
   width: 80%;
   max-width: 400px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fromContainer > h1 {
+  color: var(--main-white);
 }
 
 .from {
@@ -123,6 +127,7 @@ main.open {
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
+  color: var(--main-white);
 }
 
 .changeModeContainer {
@@ -131,6 +136,7 @@ main.open {
   justify-content: center;
   min-width: 300px;
   margin-top: 20px;
+  color: var(--main-white);
 }
 
 .cerrarSesionBtn {

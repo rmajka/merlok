@@ -2,3 +2,21 @@
   margin-top: 150px;
   min-height: 100vh;
 }
+
+.header {
+  margin-bottom: 30px;
+  font-size: var(--header-size-1);
+}
+
+.favContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 780px) {
+  .header {
+    font-size: var(--header-size-2);
+    text-align: center;
+  }
+}

@@ -1,6 +1,7 @@
 import styles from "./Checkout.module.css";
+import { Link } from "react-router-dom";
 
-export default function Checkout({ carrito }) {
+export default function Checkout({ carrito, user }) {
   //sum elements in carrito
   const sumCarrito = carrito
     .map((item) => item.bagCuantity)
@@ -13,7 +14,7 @@ export default function Checkout({ carrito }) {
   return (
     <section className={styles.resumenContainer}>
       <hr className={styles.hr} />
-      <h1>Resumen del pedido: </h1>
+      <h1>Resumen del pedido: {user.userName} </h1>
       <hr className={styles.hr} />
       <h5>Total productos en el carrito: {sumCarrito}</h5>
       <h5>
@@ -21,7 +22,14 @@ export default function Checkout({ carrito }) {
       </h5>
       <h5>IVA 21%: {(totalPrice * 0.21).toFixed(2)}&nbsp;€</h5>
       <h4>Precio total: {totalPrice.toFixed(2)}&nbsp;€ </h4>
-      <button>Hacer pedido</button>
+      {!user.logIn && (
+        <Link to="/login" className={styles.linkToLogin}>
+          Identificate
+        </Link>
+      )}
+      {user.logIn && (
+        <button className={styles.checkoutBtn}>Hacer pedido</button>
+      )}
     </section>
   );
 }

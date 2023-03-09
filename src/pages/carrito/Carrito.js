@@ -3,7 +3,12 @@ import { useEffect } from "react";
 import Select from "react-select";
 import Checkout from "../../components/check-out/Checkout";
 
-export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
+export default function Carrito({
+  carrito,
+  setCarrito,
+  setAbrirPresentacion,
+  user,
+}) {
   //change the title
   useEffect(() => {
     document.title = "Merlok - Carrito";
@@ -110,7 +115,7 @@ export default function Carrito({ carrito, setCarrito, setAbrirPresentacion }) {
         <p className={styles.carritoVacio}>Carrito de compra está vacío</p>
       )}
       <div className={styles.productsContainer}>{showCarrito}</div>
-      {carrito.length !== 0 && <Checkout carrito={carrito} />}
+      {carrito.length !== 0 && <Checkout carrito={carrito} user={user} />}
     </section>
   );
 }

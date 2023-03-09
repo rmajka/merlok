@@ -10,7 +10,12 @@ import fillHeartLogo from "../../assets/heart-fill-logo.svg";
 import Buscador from "../buscador/Buscador";
 import Hamburger from "../hamburger/Hamburger";
 
-export default function Navbar({ productos, carrito, setElementoBuscado }) {
+export default function Navbar({
+  productos,
+  carrito,
+  setElementoBuscado,
+  user,
+}) {
   const [openSideBar, setOpenSidebar] = useState(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   //sum elements in carrito
@@ -91,9 +96,13 @@ export default function Navbar({ productos, carrito, setElementoBuscado }) {
       )}
       <div className={styles.btnsContainer}>
         <Link to="/login" className={styles.usuarioBtn}>
-          <img src={userLogo} className={styles.imgLogo} alt="usuario" />
+          {user.logIn ? (
+            user.userName
+          ) : (
+            <img src={userLogo} className={styles.imgLogo} alt="usuario" />
+          )}
           <span className={styles.usuarioBtnSpan}>
-            Inicia sesión o regístrate
+            {!user && "Inicia sesión o regístrate"}
           </span>
         </Link>
         <Link to="/favoritos" className={styles.favLink}>

@@ -30,8 +30,8 @@ export default function Favoritos({
   });
   return (
     <section className={styles.container}>
-      <h1>Tus artículos favoritos</h1>
-      <div>{favoritos}</div>
+      <h1 className={styles.header}>Tus artículos favoritos</h1>
+      <div className={styles.favContainer}>{favoritos}</div>
     </section>
   );
 }

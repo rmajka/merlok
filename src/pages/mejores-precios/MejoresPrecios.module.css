@@ -14,11 +14,12 @@
 .productContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 @media (max-width: 780px) {
   .header {
     font-size: var(--header-size-2);
+    text-align: center;
   }
 }
