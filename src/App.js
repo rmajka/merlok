@@ -34,6 +34,8 @@ function App() {
     userPass: "",
     logIn: false,
   });
+  //open/ close login screen
+  const [openLogin, setOpenLogin] = useState(false);
   //save user to sestion storage
   //get from session storage
   useEffect(() => {
@@ -83,11 +85,19 @@ function App() {
   return (
     <div className="App">
       <div className="main-content">
+        <Login
+          user={user}
+          setUser={setUser}
+          openLogin={openLogin}
+          setOpenLogin={setOpenLogin}
+        />
         <Navbar
           productos={productos}
           carrito={carrito}
           setElementoBuscado={setElementoBuscado}
           user={user}
+          openLogin={openLogin}
+          setOpenLogin={setOpenLogin}
         />
         <Routes>
           <Route
@@ -166,10 +176,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/login"
-            element={<Login user={user} setUser={setUser} />}
-          />
+
           <Route
             path="/buscadorPresentacion"
             element={

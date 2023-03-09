@@ -15,6 +15,7 @@ export default function Navbar({
   carrito,
   setElementoBuscado,
   user,
+  setOpenLogin,
 }) {
   const [openSideBar, setOpenSidebar] = useState(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
@@ -95,7 +96,10 @@ export default function Navbar({
         ></div>
       )}
       <div className={styles.btnsContainer}>
-        <Link to="/login" className={styles.usuarioBtn}>
+        <button
+          className={styles.usuarioBtn}
+          onClick={() => setOpenLogin(true)}
+        >
           {user.logIn ? (
             user.userName
           ) : (
@@ -104,7 +108,7 @@ export default function Navbar({
           <span className={styles.usuarioBtnSpan}>
             {!user && "Inicia sesión o regístrate"}
           </span>
-        </Link>
+        </button>
         <Link to="/favoritos" className={styles.favLink}>
           <img
             src={

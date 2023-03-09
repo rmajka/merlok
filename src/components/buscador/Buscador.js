@@ -21,18 +21,12 @@ export default function Buscador({ setElementoBuscado }) {
     <form className={styles.form} onSubmit={handleSearch}>
       <input
         className={styles.input}
-        type="text"
+        type="search"
         placeholder="¿Qué estás buscando?"
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
         ref={inputRef}
       />
-      {searchTerm !== "" && (
-        <div
-          className={styles.cleanInputBtn}
-          onClick={() => setSearchTerm("")}
-        ></div>
-      )}
     </form>
   );
 }

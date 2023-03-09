@@ -1,11 +1,9 @@
 import styles from "./Login.module.css";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import eyeOpen from "../../assets/eye-open.svg";
 import eyeClosed from "../../assets/eye-close.svg";
 
-export default function Login({ user, setUser }) {
-  const [open, setOpen] = useState(false);
+export default function Login({ user, setUser, openLogin, setOpenLogin }) {
   const [loginMode, setLoginMode] = useState(false);
   const [tempUser, setTempUser] = useState({
     userName: "",
@@ -15,10 +13,7 @@ export default function Login({ user, setUser }) {
   });
   const [msg, setMsg] = useState("");
   const [showPas, setShowPass] = useState(false);
-  //show login screen
-  useEffect(() => {
-    setOpen(true);
-  }, []);
+
   //manage sign up
   function handleSubmitFrom(e) {
     e.preventDefault();
@@ -56,16 +51,15 @@ export default function Login({ user, setUser }) {
 
   return (
     <section className={styles.container}>
-      <main className={open ? styles.open : styles.close}>
+      <main className={openLogin ? styles.open : styles.close}>
         <div className={styles.fromContainer}>
           <h1>Hola {user.logIn && user.userName}</h1>
-          <Link
+          <span
             className={styles.volverBtn}
-            to="/"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpenLogin(false)}
           >
-            Volver a la página principal
-          </Link>
+            Volver
+          </span>
           {!user.logIn && (
             <form
               action="submit"
