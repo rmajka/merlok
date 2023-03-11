@@ -22,7 +22,16 @@
 }
 
 .carritoVacio {
-  margin-top: 100px;
+  margin-top: 20px;
+}
+
+.toPerfil {
+  margin: 30px;
+  color: var(--main-black);
+}
+
+.toPerfil:hover {
+  color: var(--main-blue);
 }
 
 .itemContainer {

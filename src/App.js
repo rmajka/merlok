@@ -15,6 +15,7 @@ import Login from "./pages/login/Login";
 import Presentacion from "./components/presentacion/Presentacion";
 import Carrito from "./pages/carrito/Carrito";
 import BuscadorPresentacion from "./pages/buscadorPresentacion/BuscadorPresentacion";
+import Perfil from "./pages/perfil/Perfil";
 import ScrollArribaBtn from "./components/scroll-arriba-btn/ScrollArribaBtn";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     userEmail: "",
     userPass: "",
     logIn: false,
+    orders: [],
   });
   //open/ close login screen
   const [openLogin, setOpenLogin] = useState(false);
@@ -173,6 +175,8 @@ function App() {
                 setCarrito={setCarrito}
                 setAbrirPresentacion={setAbrirPresentacion}
                 user={user}
+                setUser={setUser}
+                setOpenLogin={setOpenLogin}
               />
             }
           />
@@ -189,6 +193,10 @@ function App() {
                 setAbrirPresentacion={setAbrirPresentacion}
               />
             }
+          />
+          <Route
+            path="/perfil"
+            element={<Perfil user={user} setUser={setUser} />}
           />
         </Routes>
         {abrirPresentacion.abrir && (

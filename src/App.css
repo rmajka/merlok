@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+input::placeholder {
+  color: var(--main-dark-grey);
+  opacity: 1;
+}
+
 :root {
   --main-white: #ffffff;
   --main-black: #000000;

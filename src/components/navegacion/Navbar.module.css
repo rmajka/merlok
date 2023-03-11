@@ -51,6 +51,7 @@
 .usuarioBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   border: none;
   background-color: transparent;
   margin-right: 20px;
@@ -59,6 +60,7 @@
   text-decoration: none;
   color: black;
   border-radius: 50px;
+  width: fit-content;
 }
 
 .usuarioBtn:hover {
@@ -68,7 +70,7 @@
 .usuarioBtnSpan {
   font-size: 0.65rem;
   font-weight: 700;
-  width: 80px;
+  max-width: 80px;
   padding-left: 5px;
 }
 

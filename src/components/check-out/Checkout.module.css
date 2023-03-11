@@ -20,14 +20,6 @@
   margin: 5px 0;
 }
 
-.linkToLogin {
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--main-blue);
-  border-radius: 3px;
-  color: var(--main-white);
-}
-
 .checkoutBtn {
   text-align: center;
   border: none;
@@ -39,7 +31,15 @@
 }
 
 .checkoutBtn:hover {
-  color: #a7d4fb;
+  color: #c4e2fc;
+}
+
+.toDir {
+  display: flex;
+}
+
+.toPerfil {
+  color: var(--main-black);
 }
 
 @media (max-width: 780px) {

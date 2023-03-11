@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import eyeOpen from "../../assets/eye-open.svg";
 import eyeClosed from "../../assets/eye-close.svg";
 
@@ -11,6 +11,7 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
     userEmail: "",
     userPass: "",
     logIn: false,
+    orders: [],
   });
   const [msg, setMsg] = useState("");
   const [showPas, setShowPass] = useState(false);
@@ -21,6 +22,8 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
     path = "home";
   } else if (path === "buscadorPresentacion") {
     path = "buscador";
+  } else if (path === "mejores-precios") {
+    path = "mejores precios";
   }
   //manage sign up
   function handleSubmitFrom(e) {
@@ -36,6 +39,7 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
           userEmail: "",
           userPass: "",
           logIn: false,
+          orders: [],
         });
         setMsg("");
       } else setMsg("Email / contraseña incorrectos");
@@ -46,8 +50,10 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
         userEmail: "",
         userPass: "",
         logIn: false,
+        orders: [],
       });
       setMsg("Te has registrado correctamente");
+      setLoginMode(true);
     }
   }
 
@@ -56,18 +62,19 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
     setLoginMode((curr) => !curr);
     setMsg("");
   }
-  console.log("path: ", path);
+
   return (
     <section className={styles.container}>
       <main className={openLogin ? styles.open : styles.close}>
         <div className={styles.fromContainer}>
-          <h1>Hola {user.logIn && user.userName}</h1>
+          <h1>Hola {user.logIn && user.userName.slice(0, 20)}</h1>
           <span
             className={styles.volverBtn}
             onClick={() => setOpenLogin(false)}
           >
             Volver a {path}
           </span>
+
           {!user.logIn && (
             <form
               action="submit"
@@ -120,7 +127,7 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
               </button>
             </form>
           )}
-          <span>{msg}</span>
+          <span className={styles.msg}>{msg}</span>
           {!user.logIn && (
             <span className={styles.changeModeContainer}>
               {loginMode ? (
@@ -143,15 +150,22 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
               className={styles.cerrarSesionBtn}
               onClick={() =>
                 setUser({
-                  userName: "",
-                  userEmail: "",
-                  userPass: "",
+                  ...user,
                   logIn: false,
                 })
               }
             >
               Cerrar sesión
             </button>
+          )}
+          {user.logIn && (
+            <Link
+              to="/perfil"
+              className={styles.perfilLink}
+              onClick={() => setOpenLogin(false)}
+            >
+              Tu perfil y pedidos
+            </Link>
           )}
         </div>
       </main>

@@ -24,6 +24,9 @@ main.open {
 .volverBtn {
   color: var(--main-white);
   font-weight: bold;
+  background-color: #0000006e;
+  border-radius: 5px;
+  padding: 5px;
   cursor: pointer;
 }
 
@@ -40,14 +43,16 @@ main.open {
   padding: 3%;
   border-radius: 5px;
   font-size: var(--font-size-1);
-  background-color: #0000008f;
+  background-color: #00000075;
   width: 80%;
   max-width: 400px;
+  min-height: 400px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .fromContainer > h1 {
   color: var(--main-white);
+  margin-bottom: 20px;
 }
 
 .from {
@@ -146,6 +151,18 @@ main.open {
   color: var(--main-white);
   border-radius: 3px;
   cursor: pointer;
+}
+
+.cerrarSesionBtn:hover {
+  color: #d3e5fc;
+}
+
+.msg {
+  color: var(--main-white);
+}
+
+.perfilLink {
+  color: var(--main-white);
 }
 
 @media (max-width: 780px) {

@@ -100,14 +100,15 @@ export default function Navbar({
           className={styles.usuarioBtn}
           onClick={() => setOpenLogin(true)}
         >
+          {/**user */}
           {user.logIn ? (
-            user.userName
+            user.userName.slice(0, 20)
           ) : (
             <img src={userLogo} className={styles.imgLogo} alt="usuario" />
           )}
-          <span className={styles.usuarioBtnSpan}>
-            {!user && "Inicia sesión o regístrate"}
-          </span>
+          {!user.logIn && (
+            <span className={styles.usuarioBtnSpan}>Inicia sesión</span>
+          )}
         </button>
         <Link to="/favoritos" className={styles.favLink}>
           <img

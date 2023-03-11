@@ -1,5 +1,6 @@
 import styles from "./Carrito.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Select from "react-select";
 import Checkout from "../../components/check-out/Checkout";
 
@@ -8,10 +9,15 @@ export default function Carrito({
   setCarrito,
   setAbrirPresentacion,
   user,
+  setUser,
+  setOpenLogin,
 }) {
+  //order was made
+  const [orderMadeMsg, setOrderMadeMsg] = useState("");
   //change the title
   useEffect(() => {
     document.title = "Merlok - Carrito";
+    setOrderMadeMsg("");
   }, []);
 
   //custom styles for select element
@@ -112,10 +118,25 @@ export default function Carrito({
     <section className={styles.container}>
       <h1 className={styles.header}>Tu carrito de compra</h1>
       {carrito.length === 0 && (
-        <p className={styles.carritoVacio}>Carrito de compra está vacío</p>
+        <>
+          <p className={styles.carritoVacio}>Carrito de compra está vacío</p>
+          <Link to="/perfil" className={styles.toPerfil}>
+            Ver pedidos
+          </Link>
+          <p>{orderMadeMsg}</p>
+        </>
       )}
       <div className={styles.productsContainer}>{showCarrito}</div>
-      {carrito.length !== 0 && <Checkout carrito={carrito} user={user} />}
+      {carrito.length !== 0 && (
+        <Checkout
+          carrito={carrito}
+          setCarrito={setCarrito}
+          user={user}
+          setUser={setUser}
+          setOpenLogin={setOpenLogin}
+          setOrderMadeMsg={setOrderMadeMsg}
+        />
+      )}
     </section>
   );
 }
