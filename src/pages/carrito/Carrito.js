@@ -18,6 +18,7 @@ export default function Carrito({
   useEffect(() => {
     document.title = "Merlok - Carrito";
     setOrderMadeMsg("");
+    window.scrollTo(0, 0);
   }, []);
 
   //custom styles for select element
@@ -119,7 +120,7 @@ export default function Carrito({
       <h1 className={styles.header}>Tu carrito de compra</h1>
       {carrito.length === 0 && (
         <>
-          <p className={styles.carritoVacio}>Carrito de compra está vacío</p>
+          <p className={styles.carritoVacio}>Carrito de compra está vacío.</p>
           <Link to="/perfil" className={styles.toPerfil}>
             Ver pedidos
           </Link>

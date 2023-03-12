@@ -13,6 +13,7 @@ export default function Productos({
   //change the title
   useEffect(() => {
     document.title = "Merlok - Productos";
+    window.scrollTo(0, 0);
   }, []);
   //map to show products
   let showProductos = [];

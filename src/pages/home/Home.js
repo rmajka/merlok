@@ -16,6 +16,7 @@ export default function Home({
   //change the title
   useEffect(() => {
     document.title = "Merlok - Home";
+    window.scrollTo(0, 0);
   }, []);
   //get home grid data
   const gridRef = collection(db, "homeGrid");

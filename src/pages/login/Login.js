@@ -1,5 +1,5 @@
 import styles from "./Login.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import eyeOpen from "../../assets/eye-open.svg";
 import eyeClosed from "../../assets/eye-close.svg";
@@ -13,6 +13,11 @@ export default function Login({ user, setUser, openLogin, setOpenLogin }) {
     logIn: false,
     orders: [],
   });
+  //scroll up on load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [msg, setMsg] = useState("");
   const [showPas, setShowPass] = useState(false);
   //show current pathname

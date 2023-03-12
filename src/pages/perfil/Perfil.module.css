@@ -1,7 +1,4 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 130px;
   width: 100%;
 }
@@ -9,20 +6,32 @@
 .header {
   margin: 20px;
   font-size: var(--header-size-1);
+  text-align: center;
 }
 
 .noUser {
-  margin-top: 150px;
+  margin-top: 170px;
+  font-size: var(--header-size-1);
 }
 
 .toHome {
   color: var(--main-black);
+  margin: 20px 0;
+}
+.formContainer {
+  display: flex;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   max-width: 250px;
+  margin: 20px 5px;
+}
+
+.input {
+  margin: 5px 0;
+  padding: 3px;
 }
 
 .dirBtn {
@@ -33,6 +42,10 @@
   border-radius: 3px;
   color: var(--main-white);
   cursor: pointer;
+}
+
+.orderContainer {
+  margin: 10px 0;
 }
 
 .orderImg {
@@ -55,6 +68,11 @@
 
 @media (max-width: 780px) {
   .header {
+    font-size: var(--header-size-2);
+    text-align: center;
+  }
+
+  .noUser {
     font-size: var(--header-size-2);
     text-align: center;
   }

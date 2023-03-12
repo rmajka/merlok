@@ -12,6 +12,7 @@ export default function MejoresPrecios({
   //change the title
   useEffect(() => {
     document.title = "Merlok - Mejores precios";
+    window.scrollTo(0, 0);
   }, []);
   //sorted by price items
   let sortedItems = [];

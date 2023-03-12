@@ -1,6 +1,6 @@
 import styles from "./BuscadorPresentacion.module.css";
 import PtoductoItem from "../../components/producto-item/PtoductoItem";
-import React from "react";
+import { useEffect } from "react";
 
 export default function BuscadorPresentacion({
   elementoBuscado,
@@ -10,6 +10,11 @@ export default function BuscadorPresentacion({
   productos,
   setProductos,
 }) {
+  //scroll up on load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   let elementosEncontrados = [];
   if (elementoBuscado.toLowerCase() != "") {
     const buscador = productos.filter((item) =>

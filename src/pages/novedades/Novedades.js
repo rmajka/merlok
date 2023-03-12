@@ -12,6 +12,7 @@ export default function Novedades({
   //change the title
   useEffect(() => {
     document.title = "Merlok - Novedades";
+    window.scrollTo(0, 0);
   }, []);
   //only new items
   const onlyNew = productos.filter((item) => item.isNew);

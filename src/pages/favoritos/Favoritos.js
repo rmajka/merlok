@@ -12,6 +12,7 @@ export default function Favoritos({
   //change the title
   useEffect(() => {
     document.title = "Merlok - Favoritos";
+    window.scrollTo(0, 0);
   }, []);
   //filter favourites
   const fav = productos.filter((item) => item.isFavourite);

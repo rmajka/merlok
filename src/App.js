@@ -35,6 +35,7 @@ function App() {
     userPass: "",
     logIn: false,
     orders: [],
+    dir: undefined,
   });
   //open/ close login screen
   const [openLogin, setOpenLogin] = useState(false);

@@ -170,7 +170,7 @@
     height: 100vh;
     width: 400px;
     z-index: var(--z-index-1);
-    transition: left 0.3s ease-in-out;
+    transition: left 0.3s ease-in;
   }
 
   .open {
@@ -184,7 +184,7 @@
     height: 100vh;
     width: 400px;
     z-index: var(--z-index-1);
-    transition: left 0.3s ease-in-out;
+    transition: left 0.3s ease-in;
   }
 
   .link {

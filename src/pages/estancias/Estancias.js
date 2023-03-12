@@ -9,6 +9,7 @@ export default function Estancias({ setAbrirPresentacion }) {
   //change the title
   useEffect(() => {
     document.title = "Merlok - Estancias";
+    window.scrollTo(0, 0);
   }, []);
   //get cocina main photo data
   const estanciasRef = collection(db, "estanciasMainPhotos");

@@ -34,8 +34,9 @@ export default function Checkout({
     });
     setCarrito([]);
     setOrderMadeMsg("Pedido realizado correctamente.");
+    window.scrollTo(0, 0);
   }
-  console.log(user.orders);
+
   return (
     <section className={styles.resumenContainer}>
       <hr className={styles.hr} />
@@ -60,11 +61,12 @@ export default function Checkout({
           {user.dir && (
             <div className={styles.toDir}>
               <p>
-                {" "}
-                <b>Dirección de envío:</b> {user.dir}{" "}
+                <b>Dirección de envío:</b>{" "}
+                <span>{` ${user.dir.calle} ${user.dir.cp} ${user.dir.ciudad} ${user.dir.provincia}`}</span>
               </p>
+              &nbsp;&nbsp;
               <Link to="/perfil" className={styles.toPerfil}>
-                Cambiar
+                Cambiar dirección de envío
               </Link>
             </div>
           )}
