@@ -13,6 +13,10 @@
   width: 95%;
 }
 
+.profilData > h4 {
+  margin-bottom: 10px;
+}
+
 .noUser {
   margin-top: 170px;
   font-size: var(--header-size-1);
@@ -160,5 +164,9 @@ h6 {
 
   .orderPrice {
     font-size: 0.7rem;
+  }
+
+  .profilData > h4 {
+    text-align: center;
   }
 }

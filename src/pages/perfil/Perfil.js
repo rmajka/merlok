@@ -1,8 +1,13 @@
 import styles from "./Perfil.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Perfil({ user, setUser }) {
+  //change the title
+  useEffect(() => {
+    document.title = "Merlok -  Tus pedidos";
+    window.scrollTo(0, 0);
+  }, []);
   //store address
   const [address, setAdress] = useState({
     calle: "",
@@ -115,6 +120,7 @@ export default function Perfil({ user, setUser }) {
         <section className={styles.container}>
           <h1 className={styles.header}>Aquí podras ver tus datos y pedidos</h1>
           <div className={styles.profilData}>
+            <h4>Tus datos:</h4>
             <p>
               <b>Nombre:</b> {user.userName}
             </p>

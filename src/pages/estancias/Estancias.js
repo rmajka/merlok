@@ -109,9 +109,14 @@ export default function Estancias({ setAbrirPresentacion }) {
         <div className={styles.mainDescription}>
           <h3>Cocinas modernas y salas de estar</h3>
           <p>
-            Descubre nuestras propuestas de mobiliario para cocinas modernas y
-            salas de estar: descuble las soluciones únicas que tienen como
-            objetivo la máxima satisfacción del cliente.
+            Nuestro equipo de diseñadores ha trabajado incansablemente para
+            crear una variedad de diseños y estilos que se adapten a tus
+            necesidades. Desde cocinas minimalistas y elegantes hasta salas de
+            estar acogedoras y funcionales, nuestros muebles están diseñados
+            para hacer que tu hogar sea aún más cómodo y hermoso. Además,
+            nuestros materiales de alta calidad garantizan durabilidad y
+            resistencia a lo largo del tiempo. ¡Ven y descubre cómo podemos
+            hacer realidad tus ideas y crear el hogar de tus sueños!
           </p>
         </div>
       </div>
@@ -124,7 +129,13 @@ export default function Estancias({ setAbrirPresentacion }) {
           <p>
             En el salón charlamos, nos divertimos, nos relajamos, en definitiva,
             vivimos en él. Por eso, encontrar la decoración del salón ideal a
-            veces requiere tiempo.
+            veces requiere tiempo. Además, es importante tener en cuenta la
+            funcionalidad y la comodidad al momento de elegir los muebles y la
+            distribución del espacio. En nuestra tienda podrás encontrar una
+            amplia variedad de estilos y diseños para adecuarlos a tus
+            necesidades y gustos, siempre con la garantía de la mejor calidad en
+            materiales y acabados. Transforma tu salón en un espacio acogedor y
+            personalizado con nuestra selección de muebles y decoración.
           </p>
         </div>
         {salonMain}
