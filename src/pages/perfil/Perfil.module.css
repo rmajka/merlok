@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.profilData {
+  width: 95%;
+}
+
 .noUser {
   margin-top: 170px;
   font-size: var(--header-size-1);
@@ -20,6 +24,7 @@
 }
 .formContainer {
   display: flex;
+  flex-direction: column;
 }
 
 .form {
@@ -44,29 +49,99 @@
   cursor: pointer;
 }
 
+.orders {
+  display: flex;
+  max-width: 95%;
+  overflow-x: auto;
+}
+
+.orders::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.orders::-webkit-scrollbar-track {
+  background: #ffffff; /* color of the tracking area */
+}
+
+.orders::-webkit-scrollbar-thumb {
+  background-color: rgb(174, 174, 177); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #ffffff; /* creates padding around scroll thumb */
+}
+
 .orderContainer {
-  margin: 10px 0;
+  position: relative;
+  max-width: 500px;
+  min-width: 280px;
+  max-height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.orderContainer > h6 {
+  color: var(--main-dark-grey);
+}
+
+.orderContainer > h5,
+h6 {
+  margin-bottom: 5px;
 }
 
 .orderImg {
+  width: 90px;
   max-width: 90px;
   margin: 3px;
+  height: 90px;
 }
 
 .imgsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  height: 280px;
+  margin-top: 20px;
+  overflow-y: auto;
 }
 
-.hr {
-  width: 100%;
-  height: 1px;
-  background: var(--main-grey);
-  border: 0;
-  margin: 0;
+.imgsContainer::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.imgsContainer::-webkit-scrollbar-track {
+  background: #ffffff; /* color of the tracking area */
+}
+
+.imgsContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(174, 174, 177); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #ffffff; /* creates padding around scroll thumb */
+}
+
+.orderPrice {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50px;
+  font-size: var(--description-size);
+  font-weight: bold;
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  padding: 7px;
+}
+
+.userPedidosContainer {
+  margin-top: 30px;
 }
 
 @media (max-width: 780px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .header {
     font-size: var(--header-size-2);
     text-align: center;
@@ -75,5 +150,15 @@
   .noUser {
     font-size: var(--header-size-2);
     text-align: center;
+  }
+
+  .orders {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .orderPrice {
+    font-size: 0.7rem;
   }
 }

@@ -20,6 +20,8 @@ input::placeholder {
   --main-blue: #0f69b8;
   --main-light-blue: #f0f8ff;
   --main-yellow: #ffcc00;
+  --light-blue: #66d3fa;
+  --dark-blue: #014f6b;
   --main-font: "Open Sans", sans-serif;
   --header-size-1: 1.3rem;
   --header-size-2: 1rem;

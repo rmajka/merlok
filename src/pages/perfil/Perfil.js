@@ -15,15 +15,12 @@ export default function Perfil({ user, setUser }) {
   //err msg
   const [msg, setMsg] = useState("");
   const [updateUserMsg, setUpdateUserMsg] = useState("");
+  //update data mode
+  const [updateData, setUpdateData] = useState(false);
   //update user
   function updateUser(e) {
     e.preventDefault();
-    if (newUser.userName.trim().length !== 0) {
-      setUser({ ...user, userName: newUser.userName });
-      setNewUser({ userName: "", userEmail: "" });
-      setUpdateUserMsg("Cambios guardados");
-      return;
-    }
+
     if (
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(newUser.userEmail)
     ) {
@@ -32,6 +29,11 @@ export default function Perfil({ user, setUser }) {
       setTimeout(setUpdateUserMsg("Cambios guardados"), 2000);
     } else {
       setUpdateUserMsg("Email no valido.");
+    }
+    if (newUser.userName.trim().length !== 0) {
+      setUser({ ...user, userName: newUser.userName });
+      setNewUser({ userName: "", userEmail: "" });
+      setUpdateUserMsg("Cambios guardados");
     }
 
     setTimeout(() => setUpdateUserMsg(""), 4000);
@@ -81,10 +83,11 @@ export default function Perfil({ user, setUser }) {
 
       return (
         <div className={styles.orderContainer} key={index}>
-          <hr className={styles.hr} />
-          <h4>Númer de pedido:&nbsp; {item.order}</h4>
-          <h5>Fecha del pedido:&nbsp; {dateString}</h5>
-          <h5>Precio total:&nbsp; {item.totalPrice.toFixed()}€</h5>
+          <h5>Pedido:&nbsp; {item.order}</h5>
+          <h6>Realización:&nbsp; {dateString}</h6>
+          <span className={styles.orderPrice}>
+            {item.totalPrice.toFixed(2)}€
+          </span>
           <h6>
             Dirección de envío:&nbsp;{" "}
             <span>{` ${item.dir.calle} ${item.dir.cp} ${item.dir.ciudad} ${item.dir.provincia}`}</span>
@@ -111,7 +114,7 @@ export default function Perfil({ user, setUser }) {
       {user.logIn ? (
         <section className={styles.container}>
           <h1 className={styles.header}>Aquí podras ver tus datos y pedidos</h1>
-          <div className={styles.user}>
+          <div className={styles.profilData}>
             <p>
               <b>Nombre:</b> {user.userName}
             </p>
@@ -124,8 +127,11 @@ export default function Perfil({ user, setUser }) {
                 <span>{` ${user.dir.calle} ${user.dir.cp} ${user.dir.ciudad} ${user.dir.provincia}`}</span>
               )}
             </p>
+          </div>
+          {updateData && (
             <div className={styles.formContainer}>
               <form className={styles.form}>
+                <label htmlFor="input">Dirección de envío</label>
                 <input
                   type="text"
                   className={styles.input}
@@ -178,6 +184,7 @@ export default function Perfil({ user, setUser }) {
                 {msg}
               </form>
               <form className={styles.form}>
+                <label htmlFor="input">Datos del usuario</label>
                 <input
                   type="text"
                   required
@@ -214,13 +221,19 @@ export default function Perfil({ user, setUser }) {
                 {updateUserMsg}
               </form>
             </div>
-
-            <div className={styles.userPedidosContainer}>
-              <h4>Tus pedidos:</h4>
-              {user.orders.length === 0 && <h5>No tienes pedidos</h5>}
-            </div>
-            <div className={styles.orders}>{orders}</div>
+          )}
+          {/**updat data mode button */}
+          <button
+            className={styles.dirBtn}
+            onClick={() => setUpdateData((curr) => !curr)}
+          >
+            {updateData ? "Esconder" : " Actualizar datos"}
+          </button>
+          <div className={styles.userPedidosContainer}>
+            <h4>Tus pedidos:</h4>
+            {user.orders.length === 0 && <h5>No tienes pedidos</h5>}
           </div>
+          <div className={styles.orders}>{orders}</div>
         </section>
       ) : (
         <>
