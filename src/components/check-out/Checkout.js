@@ -75,7 +75,7 @@ export default function Checkout({
           </button>
         </>
       )}
-      {!user.dir && (
+      {!user.dir && user.logIn && (
         <Link to="/perfil" className={styles.checkoutBtn}>
           Añadir dirección de envío para finalizar pedido
         </Link>
