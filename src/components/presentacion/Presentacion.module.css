@@ -52,7 +52,7 @@
 }
 
 .imgPresentacion {
-  margin: 20px 10px;
+  margin: 10px 10px;
   width: 60%;
   max-width: 380px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -96,11 +96,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 90vh;
+    max-height: 85vh;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    width: 85%;
   }
 
   .imgPresentacion {
     width: 80%;
+    max-width: 270px;
   }
 
   .title {
@@ -109,6 +113,7 @@
 
   .descripcion {
     font-size: var(--description-size-small);
+    padding: 5px;
   }
 
   .cerrarBtn {
