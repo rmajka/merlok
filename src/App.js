@@ -208,6 +208,12 @@ function App() {
         )}
       </div>
       <ScrollArribaBtn />
+      <footer>
+        Diseño y codificación{" "}
+        <a href="https://www.rmajka.com/" target="_blank">
+          Rafał Majka
+        </a>
+      </footer>
     </div>
   );
 }

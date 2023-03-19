@@ -46,6 +46,14 @@ input::placeholder {
   width: 90%;
 }
 
+footer {
+  color: var(--dark-blue);
+}
+
+footer > a {
+  color: var(--dark-blue);
+}
+
 @media (max-width: 1000px) {
   .main-content {
     width: 95%;
