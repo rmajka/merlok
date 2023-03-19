@@ -44,10 +44,12 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   width: 90%;
+  min-height: 90vh;
 }
 
 footer {
   color: var(--dark-blue);
+  font-size: var(--description-size-small);
 }
 
 footer > a {

@@ -16,9 +16,16 @@ export default function BuscadorPresentacion({
   }, []);
 
   let elementosEncontrados = [];
-  if (elementoBuscado.toLowerCase() != "") {
+  if (elementoBuscado.trim().toLowerCase() !== "") {
+    const unaccentedString = elementoBuscado
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+    const regexPattern = unaccentedString.replace(/\s+/g, "\\s+");
+    const regex = new RegExp(regexPattern, "i");
     const buscador = productos.filter((item) =>
-      item.searchKey.toLowerCase().includes(elementoBuscado.toLowerCase())
+      item.searchKey.toLowerCase().match(regex)
     );
 
     elementosEncontrados = buscador.map((item, index) => {
